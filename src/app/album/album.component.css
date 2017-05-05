@@ -1,0 +1,13 @@
+#album {
+
+}
+
+#album .button {
+  width: 100%;
+  height: 100px;
+}
+
+#album md-list-item p {
+  width: 100%;
+}
+

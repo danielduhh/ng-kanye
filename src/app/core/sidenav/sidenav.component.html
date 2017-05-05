@@ -1,0 +1,20 @@
+<md-sidenav-container class="sidenav-container">
+  <md-sidenav #sidenav mode="side" opened="false" class="docs-component-viewer-sidenav">
+    <div class="example-scrolling-content">
+      <ul>
+        <a routerLink="/albums" routerLinkActive="active"><li>Album</li></a>
+        <a routerLink="/songs" routerLinkActive="active"> <li>Song</li></a>
+      </ul>
+    </div>
+  </md-sidenav>
+  <div class="app-content">
+
+    <button md-icon-button class="example-fab" (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
+    </button>
+
+    <!-- Routed views go here -->
+    <router-outlet></router-outlet>
+
+  </div>
+</md-sidenav-container>
