@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { SongService } from './song.service.ts';
+import { SongService } from './song.service';
 
 describe('SongService', () => {
   beforeEach(() => {

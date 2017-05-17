@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import 'rxjs/add/operator/switchMap';
+
+import  * as fromRoot from '../reducers'
 
 @Component({
   selector: 'app-sidenav',
@@ -11,7 +13,8 @@ export class SidenavComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private store: Store<fromRoot.State>
   ) { }
 
   ngOnInit() {

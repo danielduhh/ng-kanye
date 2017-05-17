@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { AlbumService } from './album.service.ts';
+import { AlbumService } from './album.service';
 
 describe('AlbumService', () => {
   beforeEach(() => {
