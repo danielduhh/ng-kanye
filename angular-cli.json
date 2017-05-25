@@ -5,10 +5,11 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "/Users/Dbaah/Documents/GitHub/kanye-goat/public/dist",
+      "outDir": "/Users/admin/Documents/GitHub/kanye/public/dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "manifest.json"
       ],
       "index": "index.html",
       "main": "main.ts",

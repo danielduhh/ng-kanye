@@ -6,7 +6,7 @@ export class SongService {
 
   constructor(private http: Http) { }
 
-  private songsUrl = '/api/songs';  // URL to web api
+  private songsUrl = 'http://127.0.0.1:5000/api/songs';  // URL to web api
 
   getSongs(){
     let songs = {};

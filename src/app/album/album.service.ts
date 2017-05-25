@@ -4,7 +4,7 @@ import { Headers, Http } from '@angular/http';
 @Injectable()
 export class AlbumService {
 
-  private albumsUrl = '/api/albums';  // URL to web api
+  private albumsUrl = 'http://127.0.0.1:5000/api/albums';  // URL to web api
   public albums: Array<any> = [];
 
   constructor(private http: Http) { }
