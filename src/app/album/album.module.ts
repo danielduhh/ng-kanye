@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '@angular/material'
+import { MdCheckboxModule, MdCardModule, MdListModule, MdButtonModule } from '@angular/material'
 import { FormsModule }   from '@angular/forms';
 
 
@@ -12,7 +12,10 @@ import { AlbumService } from './album.service';
   imports: [
     CommonModule,
     AlbumRoutingModule,
-    MaterialModule,
+    MdCheckboxModule,
+    MdCardModule,
+    MdListModule,
+    MdButtonModule,
     FormsModule
   ],
   declarations: [

@@ -2,7 +2,7 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 body {
-  font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+  font-family: VCR,Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
   margin: 0;
 }
 
@@ -27,3 +27,67 @@ app-sidenav {
   flex: 1 1 auto;
   display: flex;
 }
+
+.mat-list-item, .mat-button{
+  font-family: VCR,Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+}
+
+.mat-button.mat-primary, .mat-icon-button.mat-primary {
+  color: #b58c6e;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #b58c6e;
+}
+
+@font-face {
+  font-family: 'yeezyvote';
+  src:  url('/assets/fonts/yeezyvote.eot?nh9gcm');
+  src:  url('/assets/fonts/yeezyvote.eot?nh9gcm#iefix') format('embedded-opentype'),
+  url('/assets/fonts/yeezyvote.ttf?nh9gcm') format('truetype'),
+  url('/assets/fonts/yeezyvote.woff?nh9gcm') format('woff'),
+  url('/assets/fonts/yeezyvote.svg?nh9gcm#yeezyvote') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.mat-sidenav-backdrop.mat-sidenav-shown {
+  background-color: rgba(0,0,0,.2);
+}
+
+.icon-yeezy {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'yeezyvote' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-YeezyVoteBlack:before {
+  content: "\e900";
+}
+.icon-YeezyVoteWhite:before {
+  content: "\e901";
+}
+
+@font-face {
+  font-family: "VCR";
+  src: url("//cdn.shopify.com/s/files/1/1255/2951/t/2/assets/VCR_OSD_MONO.eot?741669282348130352");
+  src: url("//cdn.shopify.com/s/files/1/1255/2951/t/2/assets/VCR_OSD_MONO.eot?741669282348130352&#iefix") format("embedded-opentype"),
+  url("//cdn.shopify.com/s/files/1/1255/2951/t/2/assets/VCR_OSD_MONO.woff?741669282348130352") format("woff"),
+  url("//cdn.shopify.com/s/files/1/1255/2951/t/2/assets/VCR_OSD_MONO.ttf?741669282348130352") format("truetype"),
+  url("//cdn.shopify.com/s/files/1/1255/2951/t/2/assets/VCR_OSD_MONO.svg?741669282348130352#VCR") format("svg");
+  font-weight: "normal";
+  font-style: "normal"; }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "VCR";
+    src: url("//cdn.shopify.com/s/files/1/1255/2951/t/2/assets/VCR_OSD_MONO.svg?741669282348130352#VCR") format("svg"); } }

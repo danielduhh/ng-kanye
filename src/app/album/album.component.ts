@@ -35,25 +35,25 @@ export class AlbumComponent implements OnInit {
       this.AlbumService.getAlbums()
         .then(response => {
 
-          this.albums = response.features;
+          this.albums = response;
 
           // get songs as well
           this.SongService.getSongs()
             .then(response => {
 
-              let songs = response.features;
+              let songs = response;
 
               this.albums.forEach(a => {
 
-                a.properties.songs = [];
-                a.properties.selected = false;
+                a.songs = [];
+                a.selected = false;
 
                 songs.forEach(s => {
 
-                  s.properties.selected = false;
+                  s.selected = false;
 
-                  if (s.properties.album_title === a.properties.title){
-                    a.properties.songs.push(s)
+                  if (s.album_title === a.title){
+                    a.songs.push(s)
                   }
                 })
               })
@@ -61,9 +61,6 @@ export class AlbumComponent implements OnInit {
             })
         });
     }
-
-
-    console.log(this.VoteService);
 
   }
 

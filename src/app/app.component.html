@@ -1,2 +1,30 @@
-<app-navbar></app-navbar>
-<app-sidenav></app-sidenav>
+<md-toolbar>
+  <div [hidden]="numVotes<1"> {{numVotes}}/5</div>
+
+  <i class="nav-logo icon-yeezy icon-YeezyVoteBlack"></i>
+
+  <button md-icon-button class="example-fab" (click)="sidenav.toggle()">
+    <i class="material-icons">menu</i>
+  </button>
+
+</md-toolbar>
+
+
+<md-sidenav-container class="sidenav-container">
+  <md-sidenav #sidenav mode="over" opened="false" class="docs-component-viewer-sidenav">
+    <div class="menu-items" fxLayout="column">
+      <span>View Tracks By</span>
+      <a (click)="sidenav.close()" routerLink="/albums" routerLinkActive="active">Album</a>
+      <a (click)="sidenav.close()" routerLink="/songs" routerLinkActive="active">Song</a>
+    </div>
+  </md-sidenav>
+  <div class="app-content">
+
+    <!-- Routed views go here -->
+    <router-outlet></router-outlet>
+
+  </div>
+</md-sidenav-container>
+
+<!--<app-navbar></app-navbar>-->
+<!--<app-sidenav></app-sidenav>-->
