@@ -1,11 +1,12 @@
 <md-toolbar>
-  <div [hidden]="numVotes<1"> {{numVotes}}/5</div>
 
-  <i class="nav-logo icon-yeezy icon-YeezyVoteBlack"></i>
-
-  <button md-icon-button class="example-fab" (click)="sidenav.toggle()">
+  <button fxFlex="33" md-icon-button class="nav-button" (click)="sidenav.toggle()">
     <i class="material-icons">menu</i>
   </button>
+
+  <i fxFlex="33" class="nav-logo icon-yeezy icon-YeezyVoteBlack"></i>
+
+  <div [hidden]="numVotes > 5 || numVotes < 1" class="nav-vote-count" fxFlex="33"> {{numVotes}}/5</div>
 
 </md-toolbar>
 
@@ -23,8 +24,7 @@
     <!-- Routed views go here -->
     <router-outlet></router-outlet>
 
+    <app-notification-snack></app-notification-snack>
+
   </div>
 </md-sidenav-container>
-
-<!--<app-navbar></app-navbar>-->
-<!--<app-sidenav></app-sidenav>-->

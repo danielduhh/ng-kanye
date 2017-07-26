@@ -55,6 +55,18 @@ app-sidenav {
   background-color: rgba(0,0,0,.2);
 }
 
+.mat-toolbar {
+  padding:0 !important;
+}
+
+.mat-toolbar-layout{
+  width: 100%;
+}
+
+md-toolbar-row {
+  padding: 0 16px;
+}
+
 .icon-yeezy {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'yeezyvote' !important;

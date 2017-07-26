@@ -30,8 +30,8 @@ export class VoteService{
     let selectedSongs = [];
 
     this.albums.forEach( album => {
-      album.properties.songs.forEach(song => {
-        if(song.properties.selected === true){
+      album.songs.forEach(song => {
+        if(song.selected === true){
           selectedSongs.push(song);
         }
       })

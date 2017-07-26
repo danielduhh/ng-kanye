@@ -57,12 +57,17 @@ md-toolbar{
 }
 
 .nav-logo {
-  position: absolute;
-  width: 100%;
-  text-align: center;
   font-size: 28px;
+  text-align:center;
 }
 
+.nav-button {
+  text-align:left;
+}
+
+.nav-vote-count {
+  text-align: right;
+}
 
 .docs-component-viewer-sidenav ul {
   list-style-type: none;
