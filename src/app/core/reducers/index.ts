@@ -4,7 +4,7 @@ import * as fromRouter from '@ngrx/router-store';
 import { environment } from '../../../environments/environment';
 import { compose } from '@ngrx/core/compose';
 import { storeFreeze } from 'ngrx-store-freeze';
-import { combineReducers } from '@ngrx/store';
+import { ActionReducerMap, MetaReducer } from '@ngrx/store';
 
 import * as fromMenu from './menu';
 import * as fromVotes from './votes';
@@ -17,21 +17,19 @@ export interface State {
 }
 
 // collect all reducers
-const reducers = {
+export const reducers: ActionReducerMap<State> = {
   menu: fromMenu.reducer,
   votes: fromVotes.reducer
 };
 
-const developmentReducer: ActionReducer<State> = compose(storeFreeze, combineReducers)(reducers);
-const productionReducer: ActionReducer<State> = combineReducers(reducers);
-
-export function reducer(state: any, action: any) {
-  if (environment.production) {
-    return productionReducer(state, action);
-  } else {
-    return developmentReducer(state, action);
-  }
-}
+/**
+ * By default, @ngrx/store uses combineReducers with the reducer map to compose
+ * the root meta-reducer. To add more meta-reducers, provide an array of meta-reducers
+ * that will be composed to form the root meta-reducer.
+ */
+export const metaReducers: MetaReducer<State>[] = !environment.production
+  ? [storeFreeze]
+  : [];
 
 export const getMenuState = (state: State) => state.menu;
 export const getVotesState = (state: State) => state.votes;

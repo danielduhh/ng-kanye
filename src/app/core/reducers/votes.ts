@@ -1,6 +1,8 @@
 import { createSelector } from 'reselect';
 import {Action} from '@ngrx/store';
-
+export interface ActionWithPayload<T> extends Action {
+  payload: T;
+}
 export interface State {
   votes: any[];
 };
@@ -9,7 +11,7 @@ export const initialState: State = {
   votes: []
 };
 
-export function reducer(state = initialState, action: Action ): State {
+export function reducer(state = initialState, action: ActionWithPayload<any> ): State {
   switch (action.type) {
     case 'ADD_VOTE': {
 

@@ -1,5 +1,8 @@
 import { createSelector } from 'reselect';
 import {Action} from '@ngrx/store';
+export interface ActionWithPayload<T> extends Action {
+  payload: T;
+}
 
 export interface State {
   leftMenuOpen: boolean,
@@ -11,7 +14,7 @@ export const initialState: State = {
   rightMenuOpen: false
 };
 
-export function reducer(state = initialState, action: Action ): State {
+export function reducer(state = initialState, action: ActionWithPayload<any> ): State {
   switch (action.type) {
     case 'TOGGLE_LEFT_MENU':
 

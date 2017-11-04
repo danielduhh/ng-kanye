@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class AlbumService {
@@ -7,18 +8,10 @@ export class AlbumService {
   private albumsUrl = '/api/albums';  // URL to web api
   public albums: Array<any> = [];
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   getAlbums() {
-
-    return this.http.get(this.albumsUrl)
-      .toPromise()
-      .then(response => {
-
-        return response.json()
-
-      })
-      .catch(this.handleError);
+    return this.http.get(this.albumsUrl).catch(this.handleError)
   }
 
   save (albums) {

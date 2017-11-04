@@ -1,24 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class SongService {
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   private songsUrl = '/api/songs';  // URL to web api
 
   getSongs(){
-    let songs = {};
-
-    return this.http.get(this.songsUrl)
-      .toPromise()
-      .then(response => {
-
-        return response.json()
-
-      })
-      .catch(this.handleError);
+    return this.http.get(this.songsUrl).catch(this.handleError)
   }
 
   private handleError(error: any): Promise<any> {
